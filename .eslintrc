@@ -16,6 +16,7 @@
     "require-jsdoc": "off",
     "operator-linebreak": "off",
     "react/jsx-filename-extension": "off",
-    "no-confusing-arrow": "off"
+    "no-confusing-arrow": "off",
+    "no-console": "off"
   }  
 }
