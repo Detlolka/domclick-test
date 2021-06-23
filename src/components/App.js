@@ -1,0 +1,10 @@
+import React from 'react';
+import './style/index.scss';
+
+function App() {
+  return (
+    <div>Hello DomClick</div>
+  );
+}
+
+export default App;
