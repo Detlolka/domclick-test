@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import "~normalize.css";
-@import url('./app/app.scss');
+@import './page/page.scss';
+@import './header/header.scss';
 
 
 * {
@@ -11,5 +12,5 @@
 
 body {  
   font-family: 'Roboto', sans-serif;
-  font-size: 12px;
+  font-size: 12px;  
 }
