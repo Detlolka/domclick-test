@@ -2,6 +2,7 @@
 @import "~normalize.css";
 @import './page/page.scss';
 @import './header/header.scss';
+@import './question/question.scss';
 
 
 * {
@@ -12,5 +13,7 @@
 
 body {  
   font-family: 'Roboto', sans-serif;
-  font-size: 12px;  
+  font-size: 12px;
+  color: #524e4e;
+  background-color: #f7f7f7;    
 }

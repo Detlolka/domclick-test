@@ -1,6 +1,7 @@
 import React from 'react';
 import './style/index.scss';
 import Header from './Header';
+import Question from './Question';
 import getQuestions from '../utils/QuestionApi';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
   return (
     <div className="page">
       <Header />
+      <Question />
     </div>
   );
 }

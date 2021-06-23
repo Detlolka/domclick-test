@@ -17,6 +17,7 @@
     "operator-linebreak": "off",
     "react/jsx-filename-extension": "off",
     "no-confusing-arrow": "off",
-    "no-console": "off"
+    "no-console": "off",
+    "jsx-a11y/label-has-associated-control": "off"   
   }  
 }
