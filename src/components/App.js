@@ -2,6 +2,7 @@ import React from 'react';
 import './style/index.scss';
 import Header from './Header';
 import Question from './Question';
+import Footer from './Footer';
 import getQuestions from '../utils/QuestionApi';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
     <div className="page">
       <Header />
       <Question />
+      <Footer />
     </div>
   );
 }
