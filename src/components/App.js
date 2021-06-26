@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './style/index.scss';
 import Header from './Header';
 import Question from './Question';
-import Result from './Result';
+import Result from './Results';
 import Footer from './Footer';
 import getQuestions from '../utils/QuestionApi';
 import { ansSort } from '../utils/utils';
@@ -16,8 +16,7 @@ function App() {
   const [result, setResult] = useState([]);
   const [wathResult, setWatchResult] = useState(false);
 
-  console.log('result:', result);
-  console.log(difficulty);
+  console.log(selectAnswers);
 
   useEffect(() => {
     if (!questions.length) {
@@ -46,6 +45,11 @@ function App() {
       setSelectAnswers([answer]);
       return;
     }
+    if (selectAnswers.includes(answer)) {
+      const deleteAnswer = selectAnswers.filter(k => k !== answer);
+      setSelectAnswers([...deleteAnswer]);
+      return;
+    }
     setSelectAnswers([...selectAnswers, answer]);
   }
 
@@ -53,7 +57,7 @@ function App() {
     <div className="page">
       <Header />
       {wathResult ? (
-        <Result result={result} />
+        <Result result={result} totalQuestions={questions} />
       )
         : (
           <Question

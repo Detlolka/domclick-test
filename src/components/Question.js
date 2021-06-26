@@ -14,7 +14,6 @@ function Question({
 }) {
   const [answers, setAnswers] = useState([]);
   const [inputType, setInputType] = useState('');
-  console.log(inputType);
 
   function changeInputs() {
     const createAnswers = currentQuestion?.incorrect_answers
@@ -32,8 +31,6 @@ function Question({
     setCorrectAnswer([currentQuestion?.correct_answer]);
     setDifficulty(currentQuestion?.difficulty);
   }
-
-  console.log(answers);
 
   useEffect(() => {
     changeInputs();
