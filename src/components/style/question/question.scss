@@ -52,7 +52,8 @@
       line-height: 1.5rem;
       opacity: 0.8;
       color: $question-color;
-      transition: 0.5s;        
+      transition: 0.5s;
+      user-select: none;        
 
       &:hover {
         opacity: 1;
@@ -75,6 +76,7 @@
         line-height: 1.6rem;
         color: $question-color;
         transition: 0.2s;
+        user-select: none;
 
         &:hover {
           opacity: 1;
