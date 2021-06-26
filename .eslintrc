@@ -21,6 +21,7 @@
     "jsx-a11y/label-has-associated-control": "off",
     "react/prop-types": "off",
     "no-unneeded-ternary": "off",
-    "react/no-array-index-key": "off"            
+    "react/no-array-index-key": "off",
+    "no-param-reassign": "off"            
   }  
 }

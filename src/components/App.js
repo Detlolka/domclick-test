@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './style/index.scss';
 import Header from './Header';
 import Question from './Question';
+import Result from './Result';
 import Footer from './Footer';
 import getQuestions from '../utils/QuestionApi';
 import { ansSort } from '../utils/utils';
@@ -12,12 +13,10 @@ function App() {
   const [correctAnswer, setCorrectAnswer] = useState([]);
   const [difficulty, setDifficulty] = useState('');
   const [selectAnswers, setSelectAnswers] = useState([]);
-  const [result, setResult] = useState({
-    succes: 0,
-    fail: 0,
-    totalAnswers: 0
-  });
-  console.log(result);
+  const [result, setResult] = useState([]);
+  const [wathResult, setWatchResult] = useState(false);
+
+  console.log('result:', result);
   console.log(difficulty);
 
   useEffect(() => {
@@ -29,15 +28,13 @@ function App() {
 
   function checkAnswers() {
     const checkResult = ansSort(correctAnswer) === ansSort(selectAnswers);
-    if (checkResult) {
-      setResult({ ...result, succes: result.succes + 1 });
-    }
-    setResult({ ...result, fail: result.fail + 1 });
+    const handleResult = checkResult ? `${difficulty}True` : `${difficulty}False`;
+    setResult([...result, handleResult, difficulty]);
   }
 
   function onNext() {
     if (step === questions.length - 1) {
-      return;
+      setWatchResult(true);
     }
     checkAnswers();
     setSelectAnswers([]);
@@ -55,16 +52,21 @@ function App() {
   return (
     <div className="page">
       <Header />
-      <Question
-        questions={questions}
-        currentQuestion={questions[step]}
-        onNext={onNext}
-        questionNumber={step}
-        setCorrectAnswer={setCorrectAnswer}
-        setDifficulty={setDifficulty}
-        handleAnswer={handleAnswer}
-        availabilityAnswer={selectAnswers}
-      />
+      {wathResult ? (
+        <Result result={result} />
+      )
+        : (
+          <Question
+            questions={questions}
+            currentQuestion={questions[step]}
+            onNext={onNext}
+            questionNumber={step}
+            setCorrectAnswer={setCorrectAnswer}
+            setDifficulty={setDifficulty}
+            handleAnswer={handleAnswer}
+            availabilityAnswer={selectAnswers}
+          />
+        )}
       <Footer />
     </div>
   );
