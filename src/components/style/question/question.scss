@@ -18,8 +18,8 @@
   
   .question__container {
     margin: 80px auto 60px;
-    width: 80%;    
-    padding: 20px;
+    width: 80%;       
+    padding: 30px;
     border: 1px solid black;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     display: flex;
@@ -32,6 +32,7 @@
       line-height: 2.1rem;
       text-align: center;      
       margin-top: 25px;
+      max-height: 80px;
     }    
 
     .question__answers {

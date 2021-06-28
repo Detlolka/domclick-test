@@ -16,8 +16,6 @@ function App() {
   const [result, setResult] = useState([]);
   const [wathResult, setWatchResult] = useState(false);
 
-  console.log(selectAnswers);
-
   useEffect(() => {
     if (!questions.length) {
       getQuestions()
